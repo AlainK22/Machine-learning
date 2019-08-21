@@ -5,6 +5,7 @@
 // 4. hise a checked list item
 
 window.onload = function() {
+
 //Variables
 	var form = document.getElementById("form");
 	var input = document.getElementById("input");
@@ -22,11 +23,14 @@ window.onload = function() {
     function addTodoItem() 
     {
 
-
+// We start by validating the entry
         if(input.value == "") 
         {
 			alert("Please enter somethin");
 		}
+		// else if(typeof  =="integer"){
+		// 	alert("Sorry, You can't enter just a number");
+		// }
 		else {
 			var text = input.value;	
 			var item = `<li id="li-${id}">${text}<input id="box-${id}" class="checkboxes" type="checkbox"></li> `;				
@@ -42,6 +46,10 @@ window.onload = function() {
 		});
 	}
 	//Checking the checkbox and the todo item dissapear!
+	/**
+	 * 
+	 * @param {*} event 
+	 */
 	function boxChecked(event) {
 		const element = event.target;
 		if(element.type == "checkbox") {
